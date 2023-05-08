@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(103, 173, 173);
+}
+
+.container {
+    width: 320px;
+    margin: 100px auto;
+    font-family: sans-serif;
+    position: relative;
+
+}
+
+.select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudoSelect{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, .16);
+    z-index: 200;
+    border: 2px solid transparent;
+    transition: .2s ease all;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+}
+
+/* Icone seta */
+.conteudoSelect i {
+    font-size: 30px;
+    color: rgb(9, 48, 177);
+}
+
+/* Criando o triangulo */
+.conteudoSelect.ativo::before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    border-top: 15px solid rgb(9, 48, 177);
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid transparent;
+    position: absolute;
+    bottom: -30px;
+    left: calc(50% - 15px);
+}
+
+.conteudoSelect .containerInput{
+    display: flex;
+    align-items: center;
+    color: black;
+}
+.conteudoSelect .containerInput i{
+    margin-right: 10px;
+    color: black;
+
+}
+
+#inputSelect {
+    padding: 0px;
+    margin: 0px 0;
+    pointer-events: none;
+    user-select: none;
+    color: black;
+}
+
+#options {
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 100;
+    animation: fadeIn .3s forwards;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .16);
+    display: none;
+    position: absolute;
+    top: 80px;
+}
+
+#options.ativo {
+    display: block;
+}
+
+#options .option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: .2s ease all;
+}
+#options .option:hover {
+    background-color: rgb(9, 48, 177);
+    color: white;
+}
+.option:hover i{
+    color: white;
+    margin-left: 5px;
+}
+.option i {
+    margin-right: 10px;
+    transition: .2s ease all;
+    font-size: 1.4em;
+}
+
+.conteudoSelect.ativo,
+.conteudoSelect:hover,
+#options.ativo {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .16);
+    border: solid 2px rgb(9, 48, 177);
+
+}
+
+/* Barra de rolagem */
+::-webkit-scrollbar {
+    background: rgb(192, 194, 197);
+    border-radius: 0 5px 5px 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(9, 48, 177);
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.7);
+    border: solid 2px white;
+}
+
+/* Animação do options */
+@keyframes fadeIn {
+    from {
+        transform: translateY(-80px) scale(.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(10px) scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width:600px) {
+    body{background-color: red;}
+
+    .container {
+        width: 90%;
+        margin: 100px auto;
+        font-family: sans-serif;
+        position: relative;
+    
+    }
+}
+
+@media (max-width:375px) {
+    body{background-color: rgb(34, 255, 0);}
+
+    .container {
+        width: 337px;
+        margin: 100px auto;
+        font-family: sans-serif;
+        position: relative;
+    
+    }
+
+}
