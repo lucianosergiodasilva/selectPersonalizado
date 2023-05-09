@@ -7,7 +7,7 @@
 body {
     background-color: rgb(103, 173, 173);
 }
-
+h1{text-align: center;}
 .container {
     width: 320px;
     margin: 100px auto;
@@ -62,6 +62,7 @@ body {
     display: flex;
     align-items: center;
     color: black;
+    
 }
 .conteudoSelect .containerInput i{
     margin-right: 10px;
@@ -72,8 +73,6 @@ body {
 #inputSelect {
     padding: 0px;
     margin: 0px 0;
-    pointer-events: none;
-    user-select: none;
     color: black;
 }
 
@@ -125,6 +124,13 @@ body {
 
 }
 
+/* Elementos bloqueados para clicar */
+.containerInput,
+#inputSelect{
+pointer-events: none;
+user-select: none;
+}
+
 /* Barra de rolagem */
 ::-webkit-scrollbar {
     background: rgb(192, 194, 197);
@@ -151,27 +157,14 @@ body {
     }
 }
 
-@media (max-width:600px) {
-    body{background-color: red;}
-
+@media (max-width:768px) {
     .container {
-        width: 90%;
-        margin: 100px auto;
-        font-family: sans-serif;
-        position: relative;
-    
+        width: 425px;
+        margin: 20px auto;
     }
 }
-
-@media (max-width:375px) {
-    body{background-color: rgb(34, 255, 0);}
-
+@media (max-width:600px) {
     .container {
-        width: 337px;
-        margin: 100px auto;
-        font-family: sans-serif;
-        position: relative;
-    
+        width: 90%;
     }
-
 }
