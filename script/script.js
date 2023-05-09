@@ -15,13 +15,13 @@ conteudoSelect.addEventListener('click', (e) => {
     iconSeta.classList.toggle('fa-angle-up')
 })
 
-// Esconde as opções quando clica fora
+// Esconde as opções quando clica fora do select
 document.addEventListener('click', (e) => {
     if (e.target.className === '') {
-        conteudoSelect.classList.toggle('ativo')
-        options.classList.toggle('ativo')
-        iconSeta.classList.toggle('fa-angle-down')
-        iconSeta.classList.toggle('fa-angle-up')
+        conteudoSelect.classList.remove('ativo')
+        options.classList.remove('ativo')
+        iconSeta.classList.add('fa-angle-down')
+        iconSeta.classList.remove('fa-angle-up')
     }
 })
 
